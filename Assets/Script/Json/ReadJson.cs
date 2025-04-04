@@ -61,37 +61,7 @@ public class ReadJson : MonoBehaviour
         {
             mes = message;
 
-            // 随机选择
-            if (message.type == "random")
-            {
-                yield return new WaitForSeconds(2f);
-                int randomIndex = Random.Range(0, blocks.Count);
-                StartCoroutine(GetBlock(randomIndex));
-            }
-            else if (message.type == "text" || message.type == "pic")
-            {
-                // 没有遇到选择
-                if (message.text.Count == 1)
-                {
-                    textScript.CreateChatBubble(message.sender, message.text[0]);
-                    yield return new WaitForSeconds(1f);
-                }
-                // 遇到选择
-                else
-                {
-                    isChoice = true;
-                    Debug.Log("Sender: " + message.sender);
-                    Debug.Log("Text: " + message.text[0]);
-                    yield return new WaitUntil(() => isContinue);
-                    isContinue = false;
-                    if (message.type == "text" && message.choice.Count > 0)
-                    {
-                        StartCoroutine(GetBlock(int.Parse(message.choice[chioceIndex])));
-                        chioceIndex = 0;
-                    }
-                }
-            }
-            else if (message.type == "end")
+            if (message.type == "end")
             {
                 foreach (var text in message.text)
                 {
@@ -100,6 +70,50 @@ public class ReadJson : MonoBehaviour
                     chatThread.StartScene();
                 }
                 Destroy(gameObject);
+            }
+            else if (message.sender == 0)
+            {
+                // 随机选择
+                if (message.type == "random")
+                {
+                    yield return new WaitForSeconds(2f);
+                    int randomIndex = Random.Range(0, blocks.Count);
+                    StartCoroutine(GetBlock(randomIndex));
+                }
+                else if (message.type == "text" || message.type == "pic")
+                {
+                    yield return new WaitForSeconds(1f);
+                    textScript.CreateChatBubble(message.sender, message.text[0]);
+                }
+            }
+            else if (message.sender == 1)
+            {
+                if (message.type == "text" || message.type == "pic")
+                {
+                    // 没有遇到选择
+                    if (message.text.Count == 1)
+                    {
+                        Debug.Log("Sender: " + message.sender);
+                        Debug.Log("Text: " + message.text[0]);
+                        yield return new WaitUntil(() => isContinue);
+                        textScript.CreateChatBubble(message.sender, message.text[0]);
+                    }
+                    // 遇到选择
+                    else
+                    {
+                        isChoice = true;
+                        Debug.Log("Sender: " + message.sender);
+                        Debug.Log("Text: " + message.text[0]);
+                        yield return new WaitUntil(() => isContinue);
+                        textScript.CreateChatBubble(message.sender, message.text[chioceIndex]);
+                        isContinue = false;
+                        if (message.type == "text" && message.choice.Count > 0)
+                        {
+                            StartCoroutine(GetBlock(int.Parse(message.choice[chioceIndex])));
+                            chioceIndex = 0;
+                        }
+                    }
+                }
             }
         }
 

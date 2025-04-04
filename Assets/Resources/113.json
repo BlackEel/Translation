@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "messages": [
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["等会有个申请换货的顾客"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["你给他发的时候记得发这个"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "pic",
+                "text": ["path/to/image"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["收到"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["104"],
+                "choice": []
+            }
+        ]
+    }
+]

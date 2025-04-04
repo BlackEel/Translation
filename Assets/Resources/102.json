@@ -1,0 +1,66 @@
+[
+    {
+        "id": 0,
+        "messages": [
+            {
+                "sender": 1,
+                "type": "pic",
+                "text": ["path/to/image0", "path/to/image1", "path/to/image2"],
+                "choice": ["100", "101", "100"]
+                
+            }
+        ]
+    },
+    {
+        "id": 100,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["我不是说了不要4吗？！"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["你再这样我就投诉你了！"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "pic",
+                "text": ["path/to/image0", "path/to/image1", "path/to/image2"],
+                "choice": ["100", "101", "100"]
+            }
+        ]
+    },
+    {
+        "id": 101,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["可以，这号不错"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["好的"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["那我安排库房给你发出了"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["113"],
+                "choice": []
+            }
+        ]
+    }
+]

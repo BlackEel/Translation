@@ -1,0 +1,105 @@
+[
+    {
+        "id": 0,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["等一下"],
+                "choice": []
+                
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["这个也不行"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["请问是哪里有问题", "你有病吧", "怎么说？"],
+                "choice": ["100", "101", "102"]
+            }
+        ]
+    },
+    {
+        "id": 101,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["bad"],
+                "choice": []
+            }
+        ]
+    },
+    {
+        "id": 102,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["bad2"],
+                "choice": []
+            }
+        ]
+    },
+    {
+        "id": 100,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["这个生产日期2024年7月"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["正好是我被绿的那段时间"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["不吉利"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["脑子有泡", "活该被绿", "那我联系库房给您换一把"],
+                "choice": ["200", "200", "201"]
+            }
+        ]
+    },
+    {
+        "id": 200,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["bad"],
+                "choice": []
+            }
+        ]
+    },
+    {
+        "id": 201,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["利索点"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["115", "101"],
+                "choice": []
+            }
+        ]
+    }
+]

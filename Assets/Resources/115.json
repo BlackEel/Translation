@@ -1,0 +1,61 @@
+[
+    {
+        "id": 0,
+        "messages": [
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["库房，那个换货的"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["别发那个"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["再找个数字不带4，带7，生产日期在2024年7月后的货"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["这么多要求"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["等会"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "pic",
+                "text": ["path/to/image"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["这个可以了吧"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["收到"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["106"],
+                "choice": []
+            }
+        ]
+    }
+]

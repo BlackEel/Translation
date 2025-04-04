@@ -1,0 +1,303 @@
+[
+    {
+        "id": 0,
+        "messages": [
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["你好", "您好", "亲"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["我这边看您申请了一个换货"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["请问是有什么问题吗？"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["你卖给我的这琴有问题"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["请问具体是什么问题？", "你说有问题就有问题？"],
+                "choice": ["100", "101"]
+            }
+        ]
+    },
+    {
+        "id": 101,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["bad"],
+                "choice": []
+            }
+        ]
+    },
+    {
+        "id": 100,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["你看看这序列号"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "pic",
+                "text": ["path/to/pic"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["稍等"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["这序列号是能通过官网验证的"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["是官方正品，亲"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["你自己念念"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["滚你的", "143244"],
+                "choice": ["200", "201"]
+            }
+        ]
+    },
+    {
+        "id": 200,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["bad"],
+                "choice": []
+            }
+        ]
+    },
+    {
+        "id": 201,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["你觉得这数字合适吗？"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["去你的", "你是说4吗", "你是说3吗", "你是说2吗", "我觉得很合适"],
+                "choice": ["300", "301", "302", "302", "302"]
+            }
+        ]
+    },
+    {
+        "id": 300,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["bad"],
+                "choice": []
+            }
+        ]
+    },
+    {
+        "id": 302,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["......"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["你觉得这有什么问题？"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["去你的", "你是说4吗", "你是说3吗", "你是说2吗", "我觉得很合适"],
+                "choice": ["300", "301", "302", "302", "302"]
+            }
+        ]
+    },
+    {
+        "id": 301,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["这个号里太多4了"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["这个数字不吉利"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["根据我的生辰八字来算"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["再结合十二星座"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["我的幸运数字是7"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["4对我来说"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["很不好"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["我要退货"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["（通过退款）", "那我给您换货可以吗？", "不好意思，这个理由不能退款"],
+                "choice": ["400", "401", "402"]
+            }
+        ]
+    },
+    {
+        "id": 400,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["bad"],
+                "choice": []
+            }
+        ]
+    },
+    {
+        "id": 402,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["啥原因不能退款"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["你自己看看这个号码"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["这种编号也好意思往外卖"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["看我好欺负吗？"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["不是这样"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["（通过退款）", "那我给您换货可以吗？", "不好意思，这个理由不能退款"],
+                "choice": ["400", "401", "402"]
+            }
+        ]
+    },
+    {
+        "id": 401,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["换货行"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["那你得先给我看看货号"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["免得你又发那些垃圾号给我"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["好的"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "end",
+                "text": ["110", "101"],
+                "choice": []
+            }
+        ]
+    }
+]

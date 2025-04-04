@@ -1,0 +1,119 @@
+[
+    {
+        "id": 0,
+        "messages": [
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["库房，我们雅牛哈f310还有多少库存？"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["我清点一下"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["还有二十来把"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["你给我找些编号比较好的拍给我"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["？"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["你别管这么多"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["编号里不要带数字4", "编号里最好带数字7", "你随便找几把"],
+                "choice": ["100", "100", "101"]
+            }
+        ]
+    },
+    {
+        "id": 101,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "pic",
+                "text": ["path/to/image0", "path/to/image1", "path/to/image2"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["这也没法用啊"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["编号里不要带数字4", "编号里最好带数字7", "你随便找几把"],
+                "choice": ["100", "100", "101"]
+            }
+        ]
+    },
+    {
+        "id": 100,
+        "messages": [
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["收到"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "text",
+                "text": ["又来了哪位迷信的顾客"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "pic",
+                "text": ["path/to/image0"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "pic",
+                "text": ["path/to/image1"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "pic",
+                "text": ["path/to/image2"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "text",
+                "text": ["收到"],
+                "choice": []
+            },
+            {
+                "sender": 1,
+                "type": "end",
+                "text": ["done"],
+                "choice": []
+            }
+        ]
+    }
+]

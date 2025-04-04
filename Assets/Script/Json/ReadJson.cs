@@ -8,6 +8,7 @@ using System.Linq;
 public class ReadJson : MonoBehaviour
 {
     private List<Block> blocks;
+    public string mesText;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class ReadJson : MonoBehaviour
         Block block = blocks.FirstOrDefault(b => b.id == targetId);
         foreach (var message in block.messages)
         {
+            mesText = string.Join(", ", message.text);
             Debug.Log("Sender: " + message.sender);
             //Debug.Log("Type: " + mes.type);
             Debug.Log("Text: " + string.Join(", ", message.text));

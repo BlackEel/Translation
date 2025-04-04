@@ -43,6 +43,8 @@ public class ReadJson : MonoBehaviour
         {
             if (inputTarget.Count > 0)
                 inputTargetText.text = inputTarget[chioceIndex];
+            else
+                inputTargetText.text = "";
 
             if (isChoice && Input.GetKeyDown(KeyCode.Backspace))
             {
@@ -75,6 +77,7 @@ public class ReadJson : MonoBehaviour
         GameObject talker = GameObject.Find(talkerId.ToString());
         textScript = talker.GetComponentInChildren<TextScript>();
         inputScript = talker.GetComponentInChildren<InputScript>();
+
         inputScript.ClearChoice();
 
         string jsonFilePath = sceneId;
@@ -106,7 +109,13 @@ public class ReadJson : MonoBehaviour
                 {
                     foreach (var text in message.text)
                     {
-                        ReadJson chatThread = Instantiate(chatThreadPrefab).GetComponent<ReadJson>();
+                        string nname = "ChatThread_" + text[1];
+                        GameObject rdmObj = GameObject.Find(nname + "_r");
+                        if (rdmObj)
+                            Destroy(rdmObj);
+                        GameObject chatObj = Instantiate(chatThreadPrefab);
+                        ReadJson chatThread = chatObj.GetComponent<ReadJson>();
+                        chatThread.gameObject.name = nname;
                         chatThread.sceneId = text;
                         chatThread.StartScene();
                     }
@@ -119,8 +128,9 @@ public class ReadJson : MonoBehaviour
                 // Ëæ»úÑ¡Ôñ
                 if (message.type == "random")
                 {
+                    name = "ChatThread_" + sceneId[1] + "_r";
                     yield return new WaitForSeconds(.2f);
-                    int randomIndex = Random.Range(0, blocks.Count);
+                    int randomIndex = Random.Range(1, blocks.Count);
                     StartCoroutine(GetBlock(randomIndex));
                 }
                 else if (message.type == "text" || message.type == "pic")

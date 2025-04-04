@@ -25,11 +25,6 @@ public class TextScript : MonoBehaviour
 
     public void CreateChatBubble(int sender, string text)
     {
-        bubbleCount++;
-        if (bubbleCount > 1)
-        {
-            MoveBubble(panelHeight);
-        }
         //GameObject chatBubble = Instantiate(chatBubblePrefab,chatBubbleParent.transform);
 
         GameObject panel = new GameObject("Panel");
@@ -64,6 +59,12 @@ public class TextScript : MonoBehaviour
         UpdatePanelSize(panel, textComponent);
 
         totalHeight = totalHeight + panelHeight;
+
+        bubbleCount++;
+        if (bubbleCount > 1)
+        {
+            MoveBubble(panelHeight,panel);
+        }
 
         if(totalHeight > originHeight)
         {
@@ -125,7 +126,7 @@ public class TextScript : MonoBehaviour
     {
         panelRT.offsetMax = panelRT.offsetMax + Vector2.up * _panelHeight;
     }
-    public void MoveBubble(float _panelHeight)
+    public void MoveBubble(float _panelHeight, GameObject _panel)
     {
         foreach (Transform child in chatBubbleParent.transform)
         {
@@ -135,5 +136,7 @@ public class TextScript : MonoBehaviour
                 rt.anchoredPosition += Vector2.up * _panelHeight;
             }
         }
+
+        _panel.GetComponent<RectTransform>().anchoredPosition -= Vector2.up * _panelHeight;
     }
 }

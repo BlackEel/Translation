@@ -707,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7809e9983f7147e4e8b2b670c05ddb69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chosenFriend: 0
 --- !u!1001 &7977502337639212392
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -819,7 +820,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 22665657892239910, guid: dad284f5db8b74f4f81eba2b0e3b3d2c, type: 3}
       propertyPath: m_Alpha
-      value: 0.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 89591037478349871, guid: dad284f5db8b74f4f81eba2b0e3b3d2c, type: 3}
       propertyPath: m_Pivot.x

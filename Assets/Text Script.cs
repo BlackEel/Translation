@@ -23,7 +23,7 @@ public class TextScript : MonoBehaviour
         originHeight = panelRT.rect.height;
     }
 
-    public void CreateChatBubble(int sender)
+    public void CreateChatBubble(int sender, string text)
     {
         bubbleCount++;
         if (bubbleCount > 1)
@@ -59,7 +59,7 @@ public class TextScript : MonoBehaviour
         Image panelImage = panel.AddComponent<Image>();
         panelImage.color = new Color(0.2f, 0.2f, 0.2f, 0.8f);
 
-        Text textComponent = CreateText(panel, readJson.mesText);
+        Text textComponent = CreateText(panel, text);
 
         UpdatePanelSize(panel, textComponent);
 

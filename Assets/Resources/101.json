@@ -25,11 +25,17 @@
                 "type": "text",
                 "text": ["请您稍等一下，我们正在和库房确认"],
                 "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "random",
+                "text": [],
+                "choice": []
             }
         ]
     },
     {
-        "id": 0,
+        "id": 1,
         "messages": [
             {
                 "sender": 0,
@@ -54,11 +60,17 @@
                 "type": "text",
                 "text": ["与库房确认需要时间"],
                 "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "random",
+                "text": [],
+                "choice": []
             }
         ]
     },
     {
-        "id": 0,
+        "id": 2,
         "messages": [
             {
                 "sender": 0,
@@ -70,6 +82,12 @@
                 "sender": 1,
                 "type": "text",
                 "text": ["请您再稍等一下"],
+                "choice": []
+            },
+            {
+                "sender": 0,
+                "type": "random",
+                "text": [],
                 "choice": []
             }
         ]

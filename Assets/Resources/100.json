@@ -6,8 +6,13 @@
                 "sender": 1,
                 "type": "text",
                 "text": ["你好", "您好", "亲"],
-                "choice": []
-            },
+                "choice": ["999", "999", "999"]
+            }
+        ]
+    },
+    {
+        "id": 999,
+        "messages": [
             {
                 "sender": 1,
                 "type": "text",

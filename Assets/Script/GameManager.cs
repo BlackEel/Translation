@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
         WindowController.windowControllerInstance.HidePanel(1);
 
         ReadJson chatThread = Instantiate(chatThreadPrefab).GetComponent<ReadJson>();
+        chatThread.gameObject.name = "ChatThread_0";
         chatThread.sceneId = "100";
         chatThread.StartScene();
     }

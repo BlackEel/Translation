@@ -4,6 +4,17 @@
         "messages": [
             {
                 "sender": 0,
+                "type": "random",
+                "text": [],
+                "choice": []
+            }
+        ]
+    },
+    {
+        "id": 1,
+        "messages": [
+            {
+                "sender": 0,
                 "type": "text",
                 "text": ["好了吗"],
                 "choice": []
@@ -35,7 +46,7 @@
         ]
     },
     {
-        "id": 1,
+        "id": 2,
         "messages": [
             {
                 "sender": 0,
@@ -70,7 +81,7 @@
         ]
     },
     {
-        "id": 2,
+        "id": 3,
         "messages": [
             {
                 "sender": 0,

@@ -10,16 +10,21 @@ public class ReadJson : MonoBehaviour
 {
     private List<Block> blocks;
     private Messages mes;
-    public bool isContinue;
 
-    private bool isChoice = false;
-    private int chioceIndex = 0;
+    [HideInInspector] public bool isContinue;
+
+    private bool isChoice;
+    private int chioceIndex;
+
+    [HideInInspector] public string sceneId;
+
+    public GameObject chatThreadPrefab;
 
     void Start()
     {
         isContinue = false;
-
-        StartScene("100");
+        isChoice = false;
+        chioceIndex = 0;
     }
 
     private void Update()
@@ -36,9 +41,9 @@ public class ReadJson : MonoBehaviour
         }
     }
 
-    private void StartScene(string sceneId)
+    public void StartScene()
     {
-        string jsonFilePath = sceneId;    // 不带扩展名
+        string jsonFilePath = sceneId;
         TextAsset jsonTextAsset = Resources.Load<TextAsset>(jsonFilePath);
         string jsonFileContent = jsonTextAsset.text;
 
@@ -53,25 +58,46 @@ public class ReadJson : MonoBehaviour
         {
             mes = message;
 
-            // 没有遇到选择
-            if (message.text.Count == 1)
+            // 随机选择
+            if (message.type == "random")
             {
-                Debug.Log("Sender: " + message.sender);
-                Debug.Log("Text: " + string.Join(", ", message.text));
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(2f);
+                int randomIndex = Random.Range(0, blocks.Count);
+                StartCoroutine(GetBlock(randomIndex));
             }
-            // 遇到选择
-            else
+            else if (message.type == "text" || message.type == "pic")
             {
-                isChoice = true;
-                Debug.Log("Sender: " + message.sender);
-                Debug.Log("Text: " + message.text[0]);
-                yield return new WaitUntil(() => isContinue);
-                isContinue = false;
-                if (message.type == "text" && message.choice.Count > 0)
+                // 没有遇到选择
+                if (message.text.Count == 1)
                 {
-                    StartCoroutine(GetBlock(int.Parse(message.choice[chioceIndex])));
+                    Debug.Log("Sender: " + message.sender);
+                    Debug.Log("Text: " + string.Join(", ", message.text));
+                    yield return new WaitForSeconds(1f);
                 }
+                // 遇到选择
+                else
+                {
+                    isChoice = true;
+                    Debug.Log("Sender: " + message.sender);
+                    Debug.Log("Text: " + message.text[0]);
+                    yield return new WaitUntil(() => isContinue);
+                    isContinue = false;
+                    if (message.type == "text" && message.choice.Count > 0)
+                    {
+                        StartCoroutine(GetBlock(int.Parse(message.choice[chioceIndex])));
+                        chioceIndex = 0;
+                    }
+                }
+            }
+            else if (message.type == "end")
+            {
+                foreach (var text in message.text)
+                {
+                    ReadJson chatThread = Instantiate(chatThreadPrefab).GetComponent<ReadJson>();
+                    chatThread.sceneId = text;
+                    chatThread.StartScene();
+                }
+                Destroy(gameObject);
             }
         }
 
